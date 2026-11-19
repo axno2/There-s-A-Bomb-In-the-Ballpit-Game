@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bd1dccyg1m6g2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7bgd4"]
+size = Vector2(40, 10)
+
+[node name="ArrowGuide" type="Node2D" unique_id=802839123]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1421909103]
+position = Vector2(50, 0)
+texture = SubResource("PlaceholderTexture2D_7bgd4")

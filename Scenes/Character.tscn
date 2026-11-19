@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ckg3ece3c0kbb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sugp2"]
+bounce = 0.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jnfkl"]
+radius = 20.0
+
+[node name="Character" type="RigidBody2D" unique_id=964274202]
+physics_material_override = SubResource("PhysicsMaterial_sugp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1008886305]
+shape = SubResource("CircleShape2D_jnfkl")

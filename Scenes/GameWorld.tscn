@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://dtjwxslxi351"]
+
+[ext_resource type="Script" uid="uid://b1v3fhfjp6krq" path="res://Scripts/GameManager.gd" id="1_n8hyf"]
+[ext_resource type="PackedScene" uid="uid://ckg3ece3c0kbb" path="res://Scenes/Character.tscn" id="2_d67nr"]
+[ext_resource type="Script" uid="uid://dwt37w1cnrl0c" path="res://Scripts/CharacterScript.gd" id="3_pcadl"]
+[ext_resource type="Texture2D" uid="uid://dbk53eoo3sqgq" path="res://Assets/Textures/P1.png" id="4_4sjua"]
+[ext_resource type="Texture2D" uid="uid://btqjgumb82j10" path="res://Assets/Textures/P1Aim.png" id="5_hfae5"]
+[ext_resource type="Texture2D" uid="uid://00s43ht1483u" path="res://Assets/Textures/P2.png" id="6_clku2"]
+[ext_resource type="PackedScene" uid="uid://b55g0grtbilrh" path="res://Scenes/Fire.tscn" id="6_hfae5"]
+[ext_resource type="Texture2D" uid="uid://dq2fmtdlgwfkj" path="res://Assets/Textures/P2Aim.png" id="7_oavat"]
+[ext_resource type="Script" uid="uid://c7vat5k0u7vex" path="res://Scripts/CameraScript.gd" id="8_dl20d"]
+[ext_resource type="Script" uid="uid://mapyh505dh4q" path="res://Scripts/ParticleHandler.gd" id="9_i828f"]
+[ext_resource type="Texture2D" uid="uid://cf5n0b05xemdt" path="res://Assets/Textures/GameBackground.png" id="10_n0d5i"]
+[ext_resource type="PackedScene" uid="uid://dk8jrk86168" path="res://Scenes/ScoreCounter.tscn" id="10_oavat"]
+[ext_resource type="Script" uid="uid://cmm37t1vta01w" path="res://Scripts/BackgroundMover.gd" id="11_2usp3"]
+[ext_resource type="FontFile" uid="uid://d4guu076ivwia" path="res://Assets/Fonts/Pixeled.ttf" id="11_n0d5i"]
+[ext_resource type="PackedScene" uid="uid://db4xuvtav7uvn" path="res://Scenes/BombTimerLabel.tscn" id="13_clku2"]
+[ext_resource type="AudioStream" uid="uid://dt56pulwxkr5o" path="res://Assets/Sounds/Boom.mp3" id="17_30f34"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cllky"]
+font = ExtResource("11_n0d5i")
+font_size = 40
+font_color = Color(0.3019608, 0.42745098, 0.9529412, 1)
+outline_size = 5
+outline_color = Color(0.18431373, 0.21176471, 0.6, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n0d5i"]
+font = ExtResource("11_n0d5i")
+font_size = 40
+font_color = Color(0.7607843, 0.28235295, 0.43137255, 1)
+outline_size = 5
+outline_color = Color(0.36078432, 0.03137255, 0.13725491, 1)
+
+[node name="GameWorld" type="Node" unique_id=294181811]
+script = ExtResource("1_n8hyf")
+
+[node name="Players" type="Node" parent="." unique_id=2073568824]
+
+[node name="1" parent="Players" unique_id=964274202 instance=ExtResource("2_d67nr")]
+position = Vector2(-150, 0)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("3_pcadl")
+
+[node name="Fire" parent="Players/1" unique_id=1206182992 instance=ExtResource("6_hfae5")]
+emitting = false
+
+[node name="Skin" type="Sprite2D" parent="Players/1" unique_id=234994853]
+texture_filter = 1
+texture = ExtResource("4_4sjua")
+
+[node name="AimGuide" type="Node2D" parent="Players/1" unique_id=1101173841]
+
+[node name="Sprite2D" type="Sprite2D" parent="Players/1/AimGuide" unique_id=1319372068]
+texture_filter = 1
+position = Vector2(29, 0)
+texture = ExtResource("5_hfae5")
+
+[node name="2" parent="Players" unique_id=616924073 instance=ExtResource("2_d67nr")]
+position = Vector2(150, 0)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("3_pcadl")
+
+[node name="Fire" parent="Players/2" unique_id=670282531 instance=ExtResource("6_hfae5")]
+emitting = false
+
+[node name="Skin" type="Sprite2D" parent="Players/2" unique_id=1876372562]
+texture_filter = 1
+texture = ExtResource("6_clku2")
+
+[node name="AimGuide" type="Node2D" parent="Players/2" unique_id=952563812]
+rotation = 3.1415927
+
+[node name="Sprite2D" type="Sprite2D" parent="Players/2/AimGuide" unique_id=417739231]
+texture_filter = 1
+position = Vector2(29, -2.5352606e-06)
+texture = ExtResource("7_oavat")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=875282644]
+script = ExtResource("8_dl20d")
+
+[node name="P1ScoreCounter" parent="Camera2D" unique_id=1407362885 instance=ExtResource("10_oavat")]
+offset_transform_position = Vector2(-300, -200)
+label_settings = SubResource("LabelSettings_cllky")
+
+[node name="P2ScoreCounter" parent="Camera2D" unique_id=1498108710 instance=ExtResource("10_oavat")]
+offset_transform_position = Vector2(300, -200)
+label_settings = SubResource("LabelSettings_n0d5i")
+
+[node name="BombSwapCooldown" type="Timer" parent="." unique_id=1493587673]
+wait_time = 0.3
+
+[node name="ParticleHandler" type="Node" parent="." unique_id=2011308883]
+script = ExtResource("9_i828f")
+
+[node name="Map" type="Node" parent="." unique_id=1828986818]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=694924537]
+z_index = -1
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("10_n0d5i")
+script = ExtResource("11_2usp3")
+
+[node name="ExplosionCountdown" type="Timer" parent="." unique_id=746585266]
+wait_time = 30.0
+one_shot = true
+
+[node name="BombTimerLabel" parent="." unique_id=1364296884 instance=ExtResource("13_clku2")]
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -150)
+
+[node name="ExplosionSFX" type="AudioStreamPlayer2D" parent="." unique_id=535868013]
+stream = ExtResource("17_30f34")
+volume_db = 5.0
+
+[connection signal="timeout" from="BombSwapCooldown" to="." method="_on_bomb_swap_cooldown_timeout"]
+[connection signal="timeout" from="ExplosionCountdown" to="." method="_on_explosion_countdown_timeout"]

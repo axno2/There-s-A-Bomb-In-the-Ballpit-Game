@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b55g0grtbilrh"]
+
+[ext_resource type="Texture2D" uid="uid://dhvmwgmdfqi6o" path="res://Assets/Textures/Fire.png" id="1_t8fvv"]
+
+[sub_resource type="Curve" id="Curve_7bgd4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5211865, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_t8fvv"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="Curve" id="Curve_yobt0"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.45338982, 0.46902657), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Node2D" type="CPUParticles2D" unique_id=1206182992]
+position = Vector2(16, -14)
+texture = ExtResource("1_t8fvv")
+randomness = 0.5
+gravity = Vector2(0, -250)
+angle_min = -85.7
+angle_max = 137.1
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_7bgd4")
+color_ramp = SubResource("Gradient_t8fvv")
+hue_variation_curve = SubResource("Curve_yobt0")

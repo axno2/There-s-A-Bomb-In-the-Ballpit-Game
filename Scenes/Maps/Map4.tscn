@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bycywykpx3rr5"]
+
+[ext_resource type="PackedScene" uid="uid://cdlqvwkrlx4a1" path="res://Scenes/Maps/MapTemplate.tscn" id="1_fe2qi"]
+[ext_resource type="PackedScene" uid="uid://c4bvpkn8lg0vb" path="res://Scenes/Special/Slowing_walls.tscn" id="2_shtqp"]
+
+[node name="MapTemplate" unique_id=902581826 instance=ExtResource("1_fe2qi")]
+
+[node name="Slowing_Walls2" parent="." index="1" unique_id=1044281966 instance=ExtResource("2_shtqp")]
+position = Vector2(-295, 282)
+
+[node name="Slowing_Walls" parent="." index="2" unique_id=1724926764 instance=ExtResource("2_shtqp")]
+position = Vector2(-447, 282)
+
+[node name="Slowing_Walls3" parent="." index="3" unique_id=1504762340 instance=ExtResource("2_shtqp")]
+position = Vector2(18, 281)
+
+[node name="Slowing_Walls4" parent="." index="4" unique_id=1981913482 instance=ExtResource("2_shtqp")]
+position = Vector2(-134, 281)
+
+[node name="Slowing_Walls5" parent="." index="5" unique_id=1154959659 instance=ExtResource("2_shtqp")]
+position = Vector2(313, 280)
+
+[node name="Slowing_Walls6" parent="." index="6" unique_id=554855094 instance=ExtResource("2_shtqp")]
+position = Vector2(161, 280)
+
+[node name="Slowing_Walls7" parent="." index="7" unique_id=1192516201 instance=ExtResource("2_shtqp")]
+position = Vector2(452, 280)
+
+[node name="Slowing_Walls8" parent="." index="8" unique_id=736195317 instance=ExtResource("2_shtqp")]
+position = Vector2(-304, -248)
+rotation = -3.1409783
+
+[node name="Slowing_Walls9" parent="." index="9" unique_id=77388259 instance=ExtResource("2_shtqp")]
+position = Vector2(-456, -248)
+rotation = -3.1409783
+
+[node name="Slowing_Walls10" parent="." index="10" unique_id=797266452 instance=ExtResource("2_shtqp")]
+position = Vector2(9, -249)
+rotation = -3.1409783
+
+[node name="Slowing_Walls11" parent="." index="11" unique_id=482949332 instance=ExtResource("2_shtqp")]
+position = Vector2(-143, -249)
+rotation = -3.1409783
+
+[node name="Slowing_Walls12" parent="." index="12" unique_id=365492154 instance=ExtResource("2_shtqp")]
+position = Vector2(304, -250)
+rotation = -3.1409783
+
+[node name="Slowing_Walls13" parent="." index="13" unique_id=209975365 instance=ExtResource("2_shtqp")]
+position = Vector2(152, -250)
+rotation = -3.1409783
+
+[node name="Slowing_Walls14" parent="." index="14" unique_id=2012052583 instance=ExtResource("2_shtqp")]
+position = Vector2(443, -250)
+rotation = -3.1409783
+
+[node name="Slowing_Walls16" parent="." index="15" unique_id=1859953094 instance=ExtResource("2_shtqp")]
+position = Vector2(-506, -184)
+rotation = -4.712364
+
+[node name="Slowing_Walls17" parent="." index="16" unique_id=1518172065 instance=ExtResource("2_shtqp")]
+position = Vector2(-505, -47)
+rotation = -4.712364
+
+[node name="Slowing_Walls18" parent="." index="17" unique_id=1864756628 instance=ExtResource("2_shtqp")]
+position = Vector2(-506, 102)
+rotation = -4.712364
+
+[node name="Slowing_Walls19" parent="." index="18" unique_id=133453390 instance=ExtResource("2_shtqp")]
+position = Vector2(-508, 233)
+rotation = -4.712364
+
+[node name="Slowing_Walls20" parent="." index="19" unique_id=1089334810 instance=ExtResource("2_shtqp")]
+position = Vector2(514, -205)
+rotation = -1.57387
+
+[node name="Slowing_Walls21" parent="." index="20" unique_id=1744138012 instance=ExtResource("2_shtqp")]
+position = Vector2(515, -68)
+rotation = -1.57387
+
+[node name="Slowing_Walls22" parent="." index="21" unique_id=2062145457 instance=ExtResource("2_shtqp")]
+position = Vector2(514, 81)
+rotation = -1.57387
+
+[node name="Slowing_Walls23" parent="." index="22" unique_id=581599991 instance=ExtResource("2_shtqp")]
+position = Vector2(512, 212)
+rotation = -1.57387
